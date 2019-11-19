@@ -1,5 +1,5 @@
 # Perceptron
-Perceptron is a simple model of a single layered Artficial Neural Network taht works for binary classification problems.    
+Perceptron is a simple model of a single layered Artficial Neural Network that works for binary classification problems.    
   This repository is the implementation of a perceptron model from scratch in python and gives us an sample usage using two-class iris data.
 # Dataset Description
 
