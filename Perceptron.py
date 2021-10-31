@@ -6,13 +6,12 @@ class Perceptron:
     #activation function
     def activation(self,data):
         #initializing with threshold value
-        activation_val=self.weights[0]
-        activation_val+=np.dot(self.weights[1:],data)
+        activation_val=np.dot(self.weights[1:],data)
         return 1 if activation_val>=0 else 0
 
     def fit(self,X,y,lrate,epochs):
         #initializing weight vector
-        self.weights=[0.0 for i in range(len(X.columns)+1)]
+        self.weights=[0.0 for i in range(len(X.columns))]
         #no.of iterations to train the neural network
         for epoch in range(epochs):
             print(str(epoch+1),"epoch has started...")
@@ -25,11 +24,9 @@ class Perceptron:
                 else:
                     #calculate the error value
                     error=y.iloc[index]-predicted
-                    #updation of threshold
-                    self.weights[0]=self.weights[0]+lrate*error
                     #updation of associated self.weights acccording to Perceptron training rule
                     for j in range(len(x)):
-                        self.weights[j+1]=self.weights[j+1]+lrate*error*x[j]
+                        self.weights[j]=self.weights[j]+lrate*error*x[j]
 
     #training perceptron for the given data
     def predict(self,x_test):
