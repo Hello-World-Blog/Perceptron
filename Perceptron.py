@@ -6,7 +6,7 @@ class Perceptron:
     #activation function
     def activation(self,data):
         #initializing with threshold value
-        activation_val=np.dot(self.weights[1:],data)
+        activation_val=np.dot(self.weights,data)
         return 1 if activation_val>=0 else 0
 
     def fit(self,X,y,lrate,epochs):
